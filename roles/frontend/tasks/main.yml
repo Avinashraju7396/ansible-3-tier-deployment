@@ -1,11 +1,11 @@
-- name: Build frontend Docker image    #creating image
+- name: Build frontend Docker image       #creating image
   docker_image:
     name: "{{ frontend_image }}"
-    source: build                       # build image
+    source: build                          # build image
     build:
-      path: "{{ app_path }}/client"
+      path: "{{ app_path }}/client"         #client colling from (2ndWeeksofCloudOps - 3 tier Application)
 
-- name: Run frontend container           #run image
+- name: Run frontend container              #run image
   docker_container:
     name: frontend
     image: "{{ frontend_image }}"

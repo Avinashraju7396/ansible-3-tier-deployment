@@ -1,11 +1,11 @@
-- name: Build frontend Docker image
+- name: Build frontend Docker image    #creating image
   docker_image:
     name: "{{ frontend_image }}"
-    source: build
+    source: build                       # build image
     build:
       path: "{{ app_path }}/client"
 
-- name: Run frontend container
+- name: Run frontend container           #run image
   docker_container:
     name: frontend
     image: "{{ frontend_image }}"
